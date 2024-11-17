@@ -1,3 +1,31 @@
-/* 
-    General Styles
-*/
+body {
+    background-size: cover;
+    background-image: url(https://fotografias.antena3.com/clipping/cmsimages02/2021/05/30/05DCF5C0-CEE6-4485-8A42-83B4765AEE90/98.jpg?crop=3910,2200,x151,y0&width=1900&height=1069&optimize=low&format=webply);
+    min-height: 100vh;
+  }
+  
+
+  .character-card {
+    width: 40%;
+  }
+  
+  .planets-card {
+    width: 45%;
+  }
+  
+
+  
+  .detailsC-image {
+    width: 80%;
+  }
+  .detailsP-image {
+    width: 60%;
+  }
+  .detailsS-image {
+    width: 100%;
+  }
+  
+  .card-star-wars {
+    width: 300px;
+  }
+  
