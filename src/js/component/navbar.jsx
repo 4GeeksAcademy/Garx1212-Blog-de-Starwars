@@ -20,7 +20,10 @@ const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fa-solid fa-heart text-light"></i>
+              <i className="fa-solid fa-heart text-light"></i>
+              <span className="mx-2">
+                {store.favoritesCount || 0} 
+              </span>
             </button>
             <div className="dropdown-menu dropdown-menu-end fw-bold">
               <h5 className="mx-3 mt-2">
@@ -28,7 +31,7 @@ const Navbar = () => {
               </h5>
               {store.favorites.map((item) => {
                 return (
-                  <div className="d-flex justify-content-between">
+                  <div className="d-flex justify-content-between" key={item.result._id}>
                     <div className="mx-3">
                       <p>{item.result.properties.name}</p>
                     </div>

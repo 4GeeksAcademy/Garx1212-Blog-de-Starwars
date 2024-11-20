@@ -8,8 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       infoCharacters: [],
       infoShips: [],
       infoPlanets: [],
-
       favorites: [],
+      favoritesCount: 0,
     },
     actions: {
       getCharacters: async () => {
@@ -78,7 +78,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       addFavorite: (element) => {
         const store = getStore();
         const notify = () => toast.success("A new Favorite was added!");
-
         if (
           store.favorites.find((item) => item.result._id === element.result._id)
         ) {
@@ -86,16 +85,21 @@ const getState = ({ getStore, getActions, setStore }) => {
           return;
         }
         const newFavorite = [...store.favorites, element];
-        setStore({ favorites: newFavorite });
+        setStore({
+          favorites: newFavorite,
+          favoritesCount: newFavorite.length,
+        });
         notify();
       },
       removeFavorite: (element) => {
         const store = getStore();
-
         const deleteFavorite = store.favorites.filter(
           (item) => item.result._id !== element.result._id
         );
-        setStore({ favorites: deleteFavorite });
+        setStore({
+          favorites: deleteFavorite,
+          favoritesCount: deleteFavorite.length,
+        });
         toast.error("Remove!");
       },
       detailsCharacter: (id) => {

@@ -18,26 +18,26 @@ const Planets = () => {
               className="container w-70 mt-4"
               key={item.result.uid + "planets"}
             >
-              <div class="card card-star-wars bg-black">
+              <div className="card card-star-wars bg-black">
                 <img
                   src={`https://starwars-visualguide.com/assets/img/planets/${item.result.uid}.jpg`}
-                  class="card-img-top"
+                  className="card-img-top"
                   alt="..."
                 />
-                <div class="card-body">
-                  <h5 class="card-title">{item.result.properties.name}</h5>
+                <div className="card-body">
+                  <h5 className="card-title">{item.result.properties.name}</h5>
 
                   <button
                     className="btn btn-outline-danger mx-2"
                     onClick={() => actions.addFavorite(item)}
                   >
-                    <i class="fa-regular fa-heart"></i>
+                    <i className="fa-regular fa-heart"></i>
                   </button>
                   <Link
                     to={`/details/planets/${item.result.uid}`}
                     className="btn btn-outline-primary my-2"
                   >
-                    <i class="fa-solid fa-eye"></i>
+                    <i className="fa-solid fa-eye"></i>
                   </Link>
                 </div>
               </div>
